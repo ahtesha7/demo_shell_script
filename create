@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#single line comment
+
+<<msg
+This is a shell script to create user
+Multiline comment
+
+msg
+
+echo "=========== Creation of User ==========="
+
+read -p "enter the username : " username
+
+read -p "enter the password :" password
+
+sudo useradd -m "$username"
+
+echo -e "$password\n$password" | sudo passwd "$username"
+
+echo "============ Successfully created User ============="
+
